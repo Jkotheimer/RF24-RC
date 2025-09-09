@@ -133,7 +133,7 @@ void requestAcknowledgement() {
   } else {
     numFailedAckRequests += ACK_REQUEST_TIMEOUT_INCREMENT;
   }
-  ackRequestPacket->listenTimeoutMillis = numFailedAckRequests;
+  ackRequestPacket->listenTimeoutMillis = 10;
   radio.stopListening();
   delayMicroseconds(150);
 
